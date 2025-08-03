@@ -28,7 +28,7 @@ namespace ApiWithRolesFromScratch.Controllers
             _config = config;
         }
 
-        [HttpPost]
+        [HttpPost("Register")]
         public async Task<IActionResult> Register([FromBody] Register model)
         {
             var user = new IdentityUser { UserName = model.Username };
@@ -41,7 +41,7 @@ namespace ApiWithRolesFromScratch.Controllers
             return BadRequest(result);
         }
 
-        [HttpPost]
+        [HttpPost("Login")]
         public async Task<IActionResult> Login([FromBody] Login loginModel)
         {
             var user = await _userManager.FindByNameAsync(loginModel.Username);

@@ -11,7 +11,8 @@ namespace ApiWithRolesFromScratch.Controllers
     {
         public UserController() { }
 
-        public UserController(string name) { }
+     
+
 
         [HttpGet]
         public IActionResult Get()
